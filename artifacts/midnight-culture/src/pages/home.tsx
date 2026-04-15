@@ -185,7 +185,7 @@ export default function Home() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="mb-8"
           >
-            <img src={bannerImg} alt="Midnight Culture" className="w-full max-w-2xl mx-auto" />
+            <img src={bannerImg} alt="Midnight Culture" className="w-full max-w-3xl mx-auto" />
           </motion.div>
 
           <motion.div
