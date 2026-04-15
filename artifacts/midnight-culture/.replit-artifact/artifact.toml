@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Midnight Culture"
+version = "1.0.0"
+id = "artifacts/midnight-culture"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18897
+
+[services.development]
+run = "pnpm --filter @workspace/midnight-culture run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/midnight-culture", "run", "build" ]
+publicDir = "artifacts/midnight-culture/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18897"
+BASE_PATH = "/"

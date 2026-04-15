@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "JzUbTr-hvYbLwLnvTHpZB"
+uri = "file://artifacts/midnight-culture/src/assets/images/hero.png"
+type = "image"
+title = "Cinematic band stage performance"
+
+[[generated]]
+id = "nOpQwOrocZGlKvKxa8XUd"
+uri = "file://artifacts/midnight-culture/src/assets/images/gallery-1.png"
+type = "image"
+title = "Guitarist playing on stage"
+
+[[generated]]
+id = "idDfZfbBnvDsiJOSsLejn"
+uri = "file://artifacts/midnight-culture/src/assets/images/gallery-2.png"
+type = "image"
+title = "Singer and bassist performing"
+
+[[generated]]
+id = "XrBQ0zSE2N-j_h1HoKn4M"
+uri = "file://artifacts/midnight-culture/src/assets/images/gallery-3.png"
+type = "image"
+title = "Drummer in action on stage"
+
+[[generated]]
+id = "Vgvhcdik5d94xgg2dXowm"
+uri = "file://artifacts/midnight-culture/src/assets/images/about.png"
+type = "image"
+title = "Band walking dimly lit venue"
