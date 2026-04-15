@@ -183,9 +183,9 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="mb-3"
+            className="mb-0"
           >
-            <img src={bannerImg} alt="Midnight Culture" className="w-full max-w-3xl mx-auto" />
+            <img src={bannerImg} alt="Midnight Culture" className="w-full max-w-3xl mx-auto" style={{ marginBottom: "-18%" }} />
           </motion.div>
 
           <motion.div
