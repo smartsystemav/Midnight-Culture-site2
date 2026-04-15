@@ -538,10 +538,10 @@ export default function Home() {
               <a href="https://www.instagram.com/mcbanduk" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a href="https://www.facebook.com/p/Midnight-Culture-61571536011309/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://www.youtube.com/watch?v=YhomzCQuGOI" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a href="https://www.youtube.com/@MidnightCultureband" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
                 <Youtube className="w-4 h-4" />
               </a>
               <a href={`mailto:${CONTACT_EMAIL}`} className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
