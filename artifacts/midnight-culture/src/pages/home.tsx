@@ -165,20 +165,19 @@ export default function Home() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div
-          className="absolute inset-0 z-0"
-          style={{ y: yHero }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background z-10" />
-          <img
-            src={bgImg}
-            alt="Background"
-            className="w-full h-full object-cover object-center scale-110"
-          />
-        </motion.div>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.div className="absolute inset-0" style={{ y: yHero }}>
+            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background z-10" />
+            <img
+              src={bgImg}
+              alt="Background"
+              className="w-full h-full object-cover object-center scale-110"
+            />
+          </motion.div>
+        </div>
 
-        <div className="container relative z-20 px-6 text-center flex flex-col items-center">
+        <div className="container relative z-20 px-6 py-28 text-center flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
