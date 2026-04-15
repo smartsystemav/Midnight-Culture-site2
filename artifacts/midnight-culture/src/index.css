@@ -50,38 +50,38 @@
 }
 
 :root {
-  /* Midnight Culture Theme - Dark by default */
-  --background: 250 30% 4%;
+  /* Midnight Culture Theme - Deep Navy Blue */
+  --background: 224 60% 4%;
   --foreground: 0 0% 98%;
   
-  --card: 250 25% 6%;
+  --card: 224 50% 6%;
   --card-foreground: 0 0% 98%;
-  --card-border: 250 20% 12%;
+  --card-border: 224 35% 12%;
   
-  --popover: 250 25% 6%;
+  --popover: 224 50% 6%;
   --popover-foreground: 0 0% 98%;
-  --popover-border: 250 20% 12%;
+  --popover-border: 224 35% 12%;
   
-  /* Primary: Electric Warm Gold/Orange */
-  --primary: 32 95% 54%;
-  --primary-foreground: 250 30% 4%;
+  /* Primary: Electric Cobalt Blue (matching logo) */
+  --primary: 222 90% 55%;
+  --primary-foreground: 0 0% 98%;
   
-  /* Secondary: Deep Stage Purple */
-  --secondary: 270 60% 15%;
+  /* Secondary */
+  --secondary: 222 60% 15%;
   --secondary-foreground: 0 0% 98%;
   
-  --muted: 250 20% 12%;
-  --muted-foreground: 250 10% 65%;
+  --muted: 222 25% 12%;
+  --muted-foreground: 222 15% 60%;
   
-  --accent: 280 80% 60%;
+  --accent: 200 85% 55%;
   --accent-foreground: 0 0% 98%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 250 20% 12%;
-  --input: 250 20% 12%;
-  --ring: 32 95% 54%;
+  --border: 222 25% 13%;
+  --input: 222 25% 13%;
+  --ring: 222 90% 55%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
   --app-font-display: 'Syne', sans-serif;
