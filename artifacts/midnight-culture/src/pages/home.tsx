@@ -370,25 +370,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Band Photo — Full Width */}
-      <section id="media" className="relative overflow-hidden">
-        <div className="relative">
-          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background to-transparent z-10" />
-          <img
-            src={bandImg}
-            alt="Midnight Culture — Live"
-            className="w-full aspect-[21/9] object-cover object-center"
-          />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent z-10" />
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <FadeIn>
-              <div className="text-center">
-                <img src={logoImg} alt="Midnight Culture" className="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-2 border-primary/50 shadow-2xl shadow-primary/20" />
-                <p className="text-white/70 text-sm font-semibold tracking-widest uppercase">Midnight Culture</p>
-                <p className="text-white/40 text-xs tracking-wider">Devon, UK</p>
+      {/* Media */}
+      <section id="media" className="py-24 lg:py-32 relative bg-card border-y border-white/5">
+        <div className="container px-6 mx-auto">
+          <FadeIn className="text-center mb-16">
+            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">Media</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">SEE US IN ACTION</h2>
+          </FadeIn>
+
+          {/* YouTube Video */}
+          <FadeIn className="mb-12">
+            <div className="relative w-full max-w-4xl mx-auto" style={{ paddingBottom: "min(56.25%, 600px)", height: 0, position: "relative" }}>
+              <iframe
+                src="https://www.youtube.com/embed/YhomzCQuGOI"
+                title="Midnight Culture — Live Performance"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border border-white/10"
+              />
+            </div>
+          </FadeIn>
+
+          {/* Band Photo */}
+          <FadeIn delay={0.1}>
+            <div className="relative w-full max-w-4xl mx-auto overflow-hidden mb-12">
+              <img
+                src={bandImg}
+                alt="Midnight Culture — The Band"
+                className="w-full aspect-[16/7] object-cover object-top border border-white/10"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-card to-transparent" />
+            </div>
+          </FadeIn>
+
+          {/* Instagram CTA */}
+          <FadeIn delay={0.2}>
+            <div className="max-w-4xl mx-auto border border-white/10 bg-background/50 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <div className="flex items-center gap-3 justify-center md:justify-start mb-3">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-display font-bold text-xl tracking-tight">Follow us on Instagram</span>
+                </div>
+                <p className="text-white/55 text-sm">Behind the scenes, gig highlights, and more — follow <span className="text-primary font-semibold">@mcbanduk</span> for the latest from Midnight Culture.</p>
               </div>
-            </FadeIn>
-          </div>
+              <a
+                href="https://www.instagram.com/mcbanduk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white font-bold text-sm tracking-widest uppercase px-8 py-3 transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+                @mcbanduk
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -500,13 +535,13 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a href="https://www.instagram.com/mcbanduk" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
                 <Instagram className="w-4 h-4" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a href="https://www.youtube.com/watch?v=YhomzCQuGOI" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
                 <Youtube className="w-4 h-4" />
               </a>
               <a href={`mailto:${CONTACT_EMAIL}`} className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
