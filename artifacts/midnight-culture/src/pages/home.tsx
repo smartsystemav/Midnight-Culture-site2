@@ -25,12 +25,10 @@ import bandImg from "@assets/DSC03883_1776245820156.jpg";
 const CONTACT_EMAIL = "midnightcultureband@gmail.com";
 
 const REPERTOIRE = [
-  { genre: "Soul, Funk & Disco Classics", songs: ["Lovely Day — Bill Withers", "I Wish — Stevie Wonder", "Superstition — Stevie Wonder", "September — Earth, Wind & Fire", "Celebration — Kool & The Gang", "Kiss — Prince"] },
-  { genre: "Pop, Rock & Throwback Anthems", songs: ["Simply the Best — Tina Turner", "The Boys of Summer — Don Henley", "Rock DJ — Robbie Williams", "Crazy — Gnarls Barkley", "Valerie — Amy Winehouse"] },
+  { genre: "Soul, Funk & Disco Classics", songs: ["Lovely Day — Bill Withers", "I Wish — Stevie Wonder", "Superstition — Stevie Wonder", "September — Earth, Wind & Fire", "Celebration — Kool & The Gang", "Kiss — Prince", "Sledgehammer — Peter Gabriel"] },
+  { genre: "Pop, Rock & Throwback Anthems", songs: ["Simply the Best — Tina Turner", "The Boys of Summer — Don Henley", "Rock DJ — Robbie Williams", "Crazy — Gnarls Barkley", "Valerie — Amy Winehouse", "Hold the Line — Toto", "Gotta Get Thru This — Daniel Bedingfield"] },
   { genre: "Indie, Rock & Pop Punk", songs: ["Place Your Hands — Reef", "How You Remind Me — Nickelback", "Year 3000 — Busted", "Five Colours in Her Hair — McFly", "Stacy's Mom — Fountains of Wayne", "Teenage Dirtbag — Wheatus", "I Believe in a Thing Called Love — The Darkness", "Shut Up and Dance — Walk The Moon"] },
-  { genre: "Pop, R&B & Party Favourites", songs: ["No Diggity — Blackstreet", "This Love — Maroon 5", "Treasure — Bruno Mars", "Love Story — Taylor Swift", "Believe — Cher", "Pink Pony Club — Chappell Roan"] },
-  { genre: "Modern & Throwback Dancefloor Fillers", songs: ["Gotta Get Thru This — Daniel Bedingfield", "About You Now — Sugababes", "Everybody (Backstreet's Back) — Backstreet Boys"] },
-  { genre: "Crowd-Pleasing Closers", songs: ["Hold the Line — Toto", "Sledgehammer — Peter Gabriel"] },
+  { genre: "Pop, R&B & Party Favourites", songs: ["No Diggity — Blackstreet", "This Love — Maroon 5", "Treasure — Bruno Mars", "Love Story — Taylor Swift", "Believe — Cher", "Pink Pony Club — Chappell Roan", "About You Now — Sugababes", "Everybody (Backstreet's Back) — Backstreet Boys"] },
 ];
 
 const SERVICES = [
@@ -185,7 +183,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="mb-8"
+            className="mb-3"
           >
             <img src={bannerImg} alt="Midnight Culture" className="w-full max-w-3xl mx-auto" />
           </motion.div>
@@ -194,7 +192,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/40 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/40 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Devon's Premier 4-Piece Function Band
@@ -352,7 +350,7 @@ export default function Home() {
               </FadeIn>
             </div>
 
-            <div className="lg:col-span-8 grid sm:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-12">
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-12">
               {REPERTOIRE.map((section, i) => (
                 <FadeIn key={section.genre} delay={0.2 + i * 0.1}>
                   <h3 className="font-display text-lg font-bold text-primary mb-5 pb-3 border-b border-white/10 uppercase tracking-wider">{section.genre}</h3>
