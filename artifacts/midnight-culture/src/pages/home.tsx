@@ -178,7 +178,7 @@ export default function Home() {
           />
         </motion.div>
 
-        <div className="container relative z-20 px-6 pt-20 text-center flex flex-col items-center">
+        <div className="container relative z-20 px-6 text-center flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
