@@ -34,5 +34,5 @@ externalPort = 80
 [userenv]
 
 [userenv.shared]
-SMTP_USER = "midnightcultureband@gmail.com"
-CONTACT_TO = "midnightcultureband@gmail.com"
+SMTP_USER = "info@mcbanduk.co.uk"
+CONTACT_TO = "info@mcbanduk.co.uk"

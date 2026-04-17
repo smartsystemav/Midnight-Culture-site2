@@ -22,7 +22,7 @@ import bannerImg from "@assets/f2f9a2b9-ebb4-4ea6-9484-51b8097807ae_177624621607
 import bgImg from "@assets/MC_Background_1776245648247.png";
 import bandImg from "@assets/DSC03883_1776245820156.jpg";
 
-const CONTACT_EMAIL = "info@midnightculture.co.uk";
+const CONTACT_EMAIL = "info@mcbanduk.co.uk";
 
 const REPERTOIRE = [
   { genre: "Soul, Funk & Disco Classics", songs: ["Lovely Day — Bill Withers", "I Wish — Stevie Wonder", "Superstition — Stevie Wonder", "September — Earth, Wind & Fire", "Celebration — Kool & The Gang", "Kiss — Prince", "Sledgehammer — Peter Gabriel"] },

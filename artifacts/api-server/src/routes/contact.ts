@@ -27,10 +27,13 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
+  const smtpHost = process.env["SMTP_HOST"] ?? "smtp.gmail.com";
+  const smtpPort = Number(process.env["SMTP_PORT"] ?? "465");
+
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
     auth: {
       user: smtpUser,
       pass: smtpPass,
