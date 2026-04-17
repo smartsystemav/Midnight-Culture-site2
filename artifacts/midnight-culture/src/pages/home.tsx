@@ -619,7 +619,7 @@ export default function Home() {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                action="/thank-you"
+                action="/thank-you.html"
                 className="space-y-5"
               >
                 <input type="hidden" name="form-name" value="contact" />
