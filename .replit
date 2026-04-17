@@ -36,3 +36,5 @@ externalPort = 80
 [userenv.shared]
 SMTP_USER = "info@mcbanduk.co.uk"
 CONTACT_TO = "info@mcbanduk.co.uk"
+SMTP_HOST = "smtp.office365.com"
+SMTP_PORT = "587"
