@@ -486,10 +486,6 @@ export default function Home() {
               <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">Get In Touch</p>
               <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-4">READY TO BOOK?</h2>
               <p className="text-white/55 text-sm">Fill out the form below — we'll get back to you with a quote within 24 hours.</p>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 transition-colors text-sm font-semibold">
-                <Mail className="w-4 h-4" />
-                {CONTACT_EMAIL}
-              </a>
             </FadeIn>
 
             <FadeIn delay={0.2}>
@@ -554,6 +550,10 @@ export default function Home() {
             <div className="text-center">
               <p className="text-white/30 text-xs tracking-widest uppercase">Premium Function Band — Devon, UK</p>
               <p className="text-white/30 text-xs mt-1">Weddings · Corporate · Private Parties · Festivals</p>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center justify-center gap-1.5 mt-3 text-primary/70 hover:text-primary transition-colors text-xs font-semibold">
+                <Mail className="w-3 h-3" />
+                {CONTACT_EMAIL}
+              </a>
             </div>
 
             <div className="flex items-center gap-3">
