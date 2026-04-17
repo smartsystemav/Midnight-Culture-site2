@@ -3,18 +3,17 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { 
-  ArrowRight, 
-  Music, 
-  CalendarDays, 
-  Users, 
+import {
+  ArrowRight,
+  Music,
+  CalendarDays,
+  Users,
   Mic2,
   Mail,
   Instagram,
   Facebook,
   Youtube,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 
 import logoImg from "@assets/Midnight_Culture_Logo_Upscaled_1776245648247.png";
@@ -25,27 +24,109 @@ import bandImg from "@assets/DSC03883_1776245820156.jpg";
 const CONTACT_EMAIL = "info@mcbanduk.co.uk";
 
 const REPERTOIRE = [
-  { genre: "Soul, Funk & Disco Classics", songs: ["Lovely Day — Bill Withers", "I Wish — Stevie Wonder", "Superstition — Stevie Wonder", "September — Earth, Wind & Fire", "Celebration — Kool & The Gang", "Kiss — Prince", "Sledgehammer — Peter Gabriel"] },
-  { genre: "Pop, Rock & Throwback Anthems", songs: ["Simply the Best — Tina Turner", "The Boys of Summer — Don Henley", "Rock DJ — Robbie Williams", "Crazy — Gnarls Barkley", "Valerie — Amy Winehouse", "Hold the Line — Toto", "Gotta Get Thru This — Daniel Bedingfield"] },
-  { genre: "Indie, Rock & Pop Punk", songs: ["Place Your Hands — Reef", "How You Remind Me — Nickelback", "Year 3000 — Busted", "Five Colours in Her Hair — McFly", "Stacy's Mom — Fountains of Wayne", "Teenage Dirtbag — Wheatus", "I Believe in a Thing Called Love — The Darkness", "Shut Up and Dance — Walk The Moon"] },
-  { genre: "Pop, R&B & Party Favourites", songs: ["No Diggity — Blackstreet", "This Love — Maroon 5", "Treasure — Bruno Mars", "Love Story — Taylor Swift", "Believe — Cher", "Pink Pony Club — Chappell Roan", "About You Now — Sugababes", "Everybody (Backstreet's Back) — Backstreet Boys"] },
+  {
+    genre: "Soul, Funk & Disco Classics",
+    songs: [
+      "Lovely Day — Bill Withers",
+      "I Wish — Stevie Wonder",
+      "Superstition — Stevie Wonder",
+      "September — Earth, Wind & Fire",
+      "Celebration — Kool & The Gang",
+      "Kiss — Prince",
+      "Sledgehammer — Peter Gabriel",
+    ],
+  },
+  {
+    genre: "Pop, Rock & Throwback Anthems",
+    songs: [
+      "Simply the Best — Tina Turner",
+      "The Boys of Summer — Don Henley",
+      "Rock DJ — Robbie Williams",
+      "Crazy — Gnarls Barkley",
+      "Valerie — Amy Winehouse",
+      "Hold the Line — Toto",
+      "Gotta Get Thru This — Daniel Bedingfield",
+    ],
+  },
+  {
+    genre: "Indie, Rock & Pop Punk",
+    songs: [
+      "Place Your Hands — Reef",
+      "How You Remind Me — Nickelback",
+      "Year 3000 — Busted",
+      "Five Colours in Her Hair — McFly",
+      "Stacy's Mom — Fountains of Wayne",
+      "Teenage Dirtbag — Wheatus",
+      "I Believe in a Thing Called Love — The Darkness",
+      "Shut Up and Dance — Walk The Moon",
+    ],
+  },
+  {
+    genre: "Pop, R&B & Party Favourites",
+    songs: [
+      "No Diggity — Blackstreet",
+      "This Love — Maroon 5",
+      "Treasure — Bruno Mars",
+      "Love Story — Taylor Swift",
+      "Believe — Cher",
+      "Pink Pony Club — Chappell Roan",
+      "About You Now — Sugababes",
+      "Everybody (Backstreet's Back) — Backstreet Boys",
+    ],
+  },
 ];
 
 const SERVICES = [
-  { title: "Weddings", desc: "Make your special day unforgettable with a packed dance floor and songs everyone loves.", icon: Users },
-  { title: "Corporate Events", desc: "Professional, polished, and guaranteed to elevate your company party or awards night.", icon: CalendarDays },
-  { title: "Private Parties", desc: "Birthdays, anniversaries, or just because — we bring the festival energy to your door.", icon: Music },
-  { title: "Festivals", desc: "Big stage energy, tight arrangements, and crowd interaction that gets everyone moving.", icon: Mic2 },
+  {
+    title: "Weddings",
+    desc: "Make your special day unforgettable with a packed dance floor and songs everyone loves.",
+    icon: Users,
+  },
+  {
+    title: "Corporate Events",
+    desc: "Professional, polished, and guaranteed to elevate your company party or awards night.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Private Parties",
+    desc: "Birthdays, anniversaries, or just because — we bring the festival energy to your door.",
+    icon: Music,
+  },
+  {
+    title: "Festivals",
+    desc: "Big stage energy, tight arrangements, and crowd interaction that gets everyone moving.",
+    icon: Mic2,
+  },
 ];
 
 const REVIEWS = [
-  { text: "Midnight Culture absolutely made our wedding. The energy they brought was incredible and the dance floor was full from the very first song right until midnight.", author: "Sarah & James — Devon Wedding" },
-  { text: "We book a lot of bands for our corporate events, but these guys are on another level. Professional, versatile, and seriously talented.", author: "Marcus T. — Event Director, Exeter" },
-  { text: "I've never seen a band cover such a huge range of eras so seamlessly. The crowd went absolutely wild. Book them — you will not regret it.", author: "Elena R. — Private Party, Torquay" },
-  { text: "From the moment they walked on stage to the very last note, they were incredible. Our guests are still talking about it weeks later.", author: "Tom & Lucy — Dartmoor Wedding" },
+  {
+    text: "Midnight Culture absolutely made our wedding. The energy they brought was incredible and the dance floor was full from the very first song right until midnight.",
+    author: "Sarah & James — Devon Wedding",
+  },
+  {
+    text: "We book a lot of bands for our corporate events, but these guys are on another level. Professional, versatile, and seriously talented.",
+    author: "Marcus T. — Event Director, Exeter",
+  },
+  {
+    text: "I've never seen a band cover such a huge range of eras so seamlessly. The crowd went absolutely wild. Book them — you will not regret it.",
+    author: "Elena R. — Private Party, Torquay",
+  },
+  {
+    text: "From the moment they walked on stage to the very last note, they were incredible. Our guests are still talking about it weeks later.",
+    author: "Tom & Lucy — Dartmoor Wedding",
+  },
 ];
 
-const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
+const FadeIn = ({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +139,6 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 );
 
 export default function Home() {
-  const { toast } = useToast();
   const { scrollYProgress } = useScroll();
   const yHero = useTransform(scrollYProgress, [0, 0.5], [0, 200]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
@@ -77,71 +157,35 @@ export default function Home() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleBooking = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-
-    setSubmitting(true);
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          date: data.get("date"),
-          type: data.get("type"),
-          venue: data.get("venue"),
-          details: data.get("details"),
-        }),
-      });
-
-      if (res.ok) {
-        toast({
-          title: "Enquiry sent!",
-          description: "We'll get back to you within 24 hours.",
-        });
-        form.reset();
-      } else {
-        const json = await res.json().catch(() => ({}));
-        toast({
-          title: "Something went wrong",
-          description: (json as { error?: string }).error ?? "Please try emailing us directly.",
-          variant: "destructive",
-        });
-      }
-    } catch {
-      toast({
-        title: "Network error",
-        description: `Please email us directly at ${CONTACT_EMAIL}`,
-        variant: "destructive",
-      });
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-white">
-
       {/* Navigation */}
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-white/8 py-3" : "bg-transparent py-5"}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-white/8 py-3"
+            : "bg-transparent py-5"
+        }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="shrink-0">
-            <img src={logoImg} alt="Midnight Culture" className="h-12 w-12 object-cover rounded-full" />
+            <img
+              src={logoImg}
+              alt="Midnight Culture"
+              className="h-12 w-12 object-cover rounded-full"
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-widest text-white/60 uppercase">
-            {["about", "repertoire", "services", "media", "contact"].map(id => (
-              <button key={id} onClick={() => scrollTo(id)} className="hover:text-primary transition-colors">
+            {["about", "repertoire", "services", "media", "contact"].map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className="hover:text-primary transition-colors"
+              >
                 {id}
               </button>
             ))}
@@ -156,13 +200,25 @@ export default function Home() {
 
           <button
             className="md:hidden text-white/70 hover:text-white transition-colors"
-            onClick={() => setMenuOpen(o => !o)}
+            onClick={() => setMenuOpen((o) => !o)}
             aria-label="Menu"
           >
             <div className="space-y-1.5">
-              <span className={`block w-6 h-0.5 bg-current transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-6 h-0.5 bg-current transition-all ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-6 h-0.5 bg-current transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              <span
+                className={`block w-6 h-0.5 bg-current transition-all ${
+                  menuOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 bg-current transition-all ${
+                  menuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 bg-current transition-all ${
+                  menuOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              />
             </div>
           </button>
         </div>
@@ -176,8 +232,12 @@ export default function Home() {
               className="md:hidden bg-background/98 border-b border-white/8 overflow-hidden"
             >
               <div className="container mx-auto px-6 py-6 flex flex-col gap-5">
-                {["about", "repertoire", "services", "media", "contact"].map(id => (
-                  <button key={id} onClick={() => scrollTo(id)} className="text-left text-white/70 hover:text-primary font-semibold uppercase tracking-widest text-sm transition-colors">
+                {["about", "repertoire", "services", "media", "contact"].map((id) => (
+                  <button
+                    key={id}
+                    onClick={() => scrollTo(id)}
+                    className="text-left text-white/70 hover:text-primary font-semibold uppercase tracking-widest text-sm transition-colors"
+                  >
                     {id}
                   </button>
                 ))}
@@ -207,7 +267,12 @@ export default function Home() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="mb-0"
           >
-            <img src={bannerImg} alt="Midnight Culture" className="w-full max-w-3xl mx-auto" style={{ marginBottom: "-18%" }} />
+            <img
+              src={bannerImg}
+              alt="Midnight Culture"
+              className="w-full max-w-3xl mx-auto"
+              style={{ marginBottom: "-18%" }}
+            />
           </motion.div>
 
           <motion.div
@@ -217,7 +282,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/40 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Devon's Premier 4-Piece Function Band
+            Devon&apos;s Premier 4-Piece Function Band
           </motion.div>
 
           <motion.p
@@ -226,8 +291,9 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Funk, pop-rock, and floor-filling covers spanning the 80s to today.
-            We make corporate gigs feel like festival headlines and weddings the greatest night of your life.
+            Funk, pop-rock, and floor-filling covers spanning the 80s to today. We make
+            corporate gigs feel like festival headlines and weddings the greatest night of
+            your life.
           </motion.p>
 
           <motion.div
@@ -285,31 +351,44 @@ export default function Home() {
 
             <div className="space-y-7">
               <FadeIn delay={0.15}>
-                <p className="text-xs font-bold tracking-widest uppercase text-primary">About Us</p>
+                <p className="text-xs font-bold tracking-widest uppercase text-primary">
+                  About Us
+                </p>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none">
-                  ELECTRIC ENERGY.<br />
+                  ELECTRIC ENERGY.
+                  <br />
                   <span className="text-primary">SERIOUS GROOVE.</span>
                 </h2>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <p className="text-white/65 font-light leading-relaxed text-lg">
-                  Based in Devon, UK, Midnight Culture are a 4-piece band of professional musicians who believe cover sets should feel like headline performances — not background music.
+                  Based in Devon, UK, Midnight Culture are a 4-piece band of professional
+                  musicians who believe cover sets should feel like headline performances —
+                  not background music.
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
                 <p className="text-white/65 font-light leading-relaxed text-lg">
-                  Our repertoire spans four decades — from tight 80s funk and pop anthems, through gritty 90s and 00s rock, right up to today's biggest chart hits. We read every room and build sets that keep the floor packed from the first chord to the final encore.
+                  Our repertoire spans four decades — from tight 80s funk and pop anthems,
+                  through gritty 90s and 00s rock, right up to today&apos;s biggest chart
+                  hits. We read every room and build sets that keep the floor packed from
+                  the first chord to the final encore.
                 </p>
               </FadeIn>
               <FadeIn delay={0.5}>
                 <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
-                  {["Funk", "Pop-Rock", "80s — Today", "Devon, UK", "Fully Professional"].map(tag => (
-                    <span key={tag} className="text-xs font-semibold tracking-widest uppercase px-4 py-2 border border-primary/30 text-primary bg-primary/8">
-                      {tag}
-                    </span>
-                  ))}
+                  {["Funk", "Pop-Rock", "80s — Today", "Devon, UK", "Fully Professional"].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs font-semibold tracking-widest uppercase px-4 py-2 border border-primary/30 text-primary bg-primary/8"
+                      >
+                        {tag}
+                      </span>
+                    )
+                  )}
                 </div>
               </FadeIn>
             </div>
@@ -319,11 +398,18 @@ export default function Home() {
 
       {/* Services */}
       <section id="services" className="py-24 lg:py-32 bg-card relative border-y border-white/5">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }} />
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }}
+        />
         <div className="container px-6 mx-auto relative z-10">
           <FadeIn className="text-center mb-16">
-            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">What We Do</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">AVAILABLE FOR</h2>
+            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">
+              What We Do
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">
+              AVAILABLE FOR
+            </h2>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -331,8 +417,12 @@ export default function Home() {
               <FadeIn key={service.title} delay={i * 0.1}>
                 <div className="bg-background/80 backdrop-blur-sm border border-white/8 p-8 h-full hover:border-primary/50 transition-colors duration-300 group">
                   <service.icon className="w-10 h-10 text-primary mb-6" />
-                  <h3 className="font-display text-xl font-bold mb-3 tracking-tight">{service.title}</h3>
-                  <p className="text-white/55 font-light leading-relaxed text-sm">{service.desc}</p>
+                  <h3 className="font-display text-xl font-bold mb-3 tracking-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/55 font-light leading-relaxed text-sm">
+                    {service.desc}
+                  </p>
                 </div>
               </FadeIn>
             ))}
@@ -346,19 +436,25 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4 space-y-7">
               <FadeIn>
-                <p className="text-xs font-bold tracking-widest uppercase text-primary">What We Play</p>
+                <p className="text-xs font-bold tracking-widest uppercase text-primary">
+                  What We Play
+                </p>
               </FadeIn>
               <FadeIn delay={0.15}>
-                <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">THE SETLIST</h2>
+                <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">
+                  THE SETLIST
+                </h2>
               </FadeIn>
               <FadeIn delay={0.25}>
                 <p className="text-white/60 font-light leading-relaxed">
-                  A high-energy mix of funk, pop, indie and party anthems spanning decades — guaranteed to keep the dancefloor full all night.
+                  A high-energy mix of funk, pop, indie and party anthems spanning decades —
+                  guaranteed to keep the dancefloor full all night.
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <p className="text-white/45 font-light leading-relaxed text-sm italic">
-                  Our repertoire is constantly evolving, and we're always happy to learn a special song for your event.
+                  Our repertoire is constantly evolving, and we&apos;re always happy to learn
+                  a special song for your event.
                 </p>
               </FadeIn>
               <FadeIn delay={0.35}>
@@ -375,7 +471,9 @@ export default function Home() {
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-12">
               {REPERTOIRE.map((section, i) => (
                 <FadeIn key={section.genre} delay={0.2 + i * 0.1}>
-                  <h3 className="font-display text-lg font-bold text-primary mb-5 pb-3 border-b border-white/10 uppercase tracking-wider">{section.genre}</h3>
+                  <h3 className="font-display text-lg font-bold text-primary mb-5 pb-3 border-b border-white/10 uppercase tracking-wider">
+                    {section.genre}
+                  </h3>
                   <ul className="space-y-3.5">
                     {section.songs.map((song, j) => (
                       <li key={j} className="flex items-start text-white/65 font-light text-sm">
@@ -383,7 +481,9 @@ export default function Home() {
                         {song}
                       </li>
                     ))}
-                    <li className="text-white/35 italic text-xs pt-2">+ many more across all genres</li>
+                    <li className="text-white/35 italic text-xs pt-2">
+                      + many more across all genres
+                    </li>
                   </ul>
                 </FadeIn>
               ))}
@@ -396,13 +496,19 @@ export default function Home() {
       <section id="media" className="py-24 lg:py-32 relative bg-card border-y border-white/5">
         <div className="container px-6 mx-auto">
           <FadeIn className="text-center mb-16">
-            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">Media</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">SEE US IN ACTION</h2>
+            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">
+              Media
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">
+              SEE US IN ACTION
+            </h2>
           </FadeIn>
 
-          {/* YouTube Video */}
           <FadeIn className="mb-12">
-            <div className="relative w-full max-w-4xl mx-auto" style={{ paddingBottom: "min(56.25%, 600px)", height: 0, position: "relative" }}>
+            <div
+              className="relative w-full max-w-4xl mx-auto"
+              style={{ paddingBottom: "min(56.25%, 600px)", height: 0, position: "relative" }}
+            >
               <iframe
                 src="https://www.youtube.com/embed/YhomzCQuGOI"
                 title="Midnight Culture — Live Performance"
@@ -413,7 +519,6 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          {/* Band Photo */}
           <FadeIn delay={0.1}>
             <div className="relative w-full max-w-4xl mx-auto overflow-hidden mb-12">
               <img
@@ -425,15 +530,20 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          {/* Instagram CTA */}
           <FadeIn delay={0.2}>
             <div className="max-w-4xl mx-auto border border-white/10 bg-background/50 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-center md:text-left">
                 <div className="flex items-center gap-3 justify-center md:justify-start mb-3">
                   <Instagram className="w-6 h-6 text-primary" />
-                  <span className="font-display font-bold text-xl tracking-tight">Follow us on Instagram</span>
+                  <span className="font-display font-bold text-xl tracking-tight">
+                    Follow us on Instagram
+                  </span>
                 </div>
-                <p className="text-white/55 text-sm">Behind the scenes, gig highlights, and more — follow <span className="text-primary font-semibold">@mcbanduk</span> for the latest from Midnight Culture.</p>
+                <p className="text-white/55 text-sm">
+                  Behind the scenes, gig highlights, and more — follow{" "}
+                  <span className="text-primary font-semibold">@mcbanduk</span> for the latest
+                  from Midnight Culture.
+                </p>
               </div>
               <a
                 href="https://www.instagram.com/mcbanduk"
@@ -453,17 +563,23 @@ export default function Home() {
       <section className="py-24 lg:py-32 relative bg-card border-t border-white/5">
         <div className="container px-6 mx-auto">
           <FadeIn className="text-center mb-16">
-            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">Reviews</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">DON'T JUST TAKE OUR WORD FOR IT</h2>
+            <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">
+              Reviews
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter">
+              DON&apos;T JUST TAKE OUR WORD FOR IT
+            </h2>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {REVIEWS.map((review, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="bg-background border border-white/8 p-7 h-full relative hover:border-primary/30 transition-colors duration-300">
-                  <div className="text-primary/20 text-7xl font-display font-bold absolute top-3 left-5 leading-none select-none">"</div>
+                  <div className="text-primary/20 text-7xl font-display font-bold absolute top-3 left-5 leading-none select-none">
+                    &quot;
+                  </div>
                   <p className="text-white/70 font-light leading-relaxed text-sm relative z-10 mb-6 italic pt-6">
-                    "{review.text}"
+                    &quot;{review.text}&quot;
                   </p>
                   <p className="font-bold text-xs tracking-widest text-primary uppercase">
                     {review.author}
@@ -477,39 +593,86 @@ export default function Home() {
 
       {/* Contact / Booking */}
       <section id="contact" className="py-24 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15" style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }} />
+        <div
+          className="absolute inset-0 opacity-15"
+          style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }}
+        />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container px-6 mx-auto relative z-10">
           <div className="max-w-3xl mx-auto bg-background/90 backdrop-blur-sm border border-white/10 p-8 md:p-14">
             <FadeIn className="text-center mb-12">
-              <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">Get In Touch</p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-4">READY TO BOOK?</h2>
-              <p className="text-white/55 text-sm">Fill out the form below — we'll get back to you with a quote within 24 hours.</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">
+                Get In Touch
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-4">
+                READY TO BOOK?
+              </h2>
+              <p className="text-white/55 text-sm">
+                Fill out the form below — we&apos;ll get back to you with a quote within 24
+                hours.
+              </p>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <form onSubmit={handleBooking} className="space-y-5">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                action="/thank-you"
+                className="space-y-5"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+
                 <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">Name *</label>
-                    <Input required name="name" placeholder="Your name" className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary text-sm" />
+                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">
+                      Name *
+                    </label>
+                    <Input
+                      required
+                      name="name"
+                      placeholder="Your name"
+                      className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary text-sm"
+                    />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">Email *</label>
-                    <Input required name="email" type="email" placeholder="your@email.com" className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary text-sm" />
+                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">
+                      Email *
+                    </label>
+                    <Input
+                      required
+                      name="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary text-sm"
+                    />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">Event Date</label>
-                    <Input name="date" type="date" className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary [color-scheme:dark] text-sm" />
+                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">
+                      Event Date
+                    </label>
+                    <Input
+                      name="date"
+                      type="date"
+                      className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary [color-scheme:dark] text-sm"
+                    />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">Event Type</label>
-                    <select name="type" className="flex h-12 w-full bg-card/60 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary appearance-none rounded-none">
-                      <option value="" disabled>Select event type</option>
+                    <label className="text-xs font-semibold uppercase tracking-widest text-white/55">
+                      Event Type
+                    </label>
+                    <select
+                      name="type"
+                      defaultValue=""
+                      className="flex h-12 w-full bg-card/60 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary appearance-none rounded-none"
+                    >
+                      <option value="" disabled>
+                        Select event type
+                      </option>
                       <option value="Wedding">Wedding</option>
                       <option value="Corporate Event">Corporate Event</option>
                       <option value="Private Party">Private Party</option>
@@ -520,18 +683,34 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-widest text-white/55">Venue / Location</label>
-                  <Input name="venue" placeholder="e.g. Exeter Golf & Country Club, Devon" className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary text-sm" />
+                  <label className="text-xs font-semibold uppercase tracking-widest text-white/55">
+                    Venue / Location
+                  </label>
+                  <Input
+                    name="venue"
+                    placeholder="e.g. Exeter Golf & Country Club, Devon"
+                    className="bg-card/60 border-white/10 rounded-none h-12 focus-visible:ring-primary text-sm"
+                  />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-widest text-white/55">Additional Details</label>
-                  <Textarea name="details" placeholder="Tell us about your event — number of guests, timings, any special requests..." className="bg-card/60 border-white/10 rounded-none min-h-[120px] focus-visible:ring-primary text-sm" />
+                  <label className="text-xs font-semibold uppercase tracking-widest text-white/55">
+                    Additional Details
+                  </label>
+                  <Textarea
+                    name="details"
+                    placeholder="Tell us about your event — number of guests, timings, any special requests..."
+                    className="bg-card/60 border-white/10 rounded-none min-h-[120px] focus-visible:ring-primary text-sm"
+                  />
                 </div>
 
-                <Button type="submit" size="lg" disabled={submitting} className="w-full bg-primary hover:bg-primary/80 text-white font-bold rounded-none h-13 text-sm tracking-widest uppercase disabled:opacity-60">
-                  {submitting ? "Sending..." : "Send Enquiry"}
-                  {!submitting && <ArrowRight className="ml-2 w-4 h-4" />}
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/80 text-white font-bold rounded-none h-13 text-sm tracking-widest uppercase"
+                >
+                  Send Enquiry
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </form>
             </FadeIn>
@@ -544,29 +723,58 @@ export default function Home() {
         <div className="container px-6 mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <button onClick={() => scrollTo("hero")} className="shrink-0">
-              <img src={logoImg} alt="Midnight Culture" className="h-14 w-14 object-cover rounded-full" />
+              <img
+                src={logoImg}
+                alt="Midnight Culture"
+                className="h-14 w-14 object-cover rounded-full"
+              />
             </button>
 
             <div className="text-center">
-              <p className="text-white/30 text-xs tracking-widest uppercase">Premium Function Band — Devon, UK</p>
-              <p className="text-white/30 text-xs mt-1">Weddings · Corporate · Private Parties · Festivals</p>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center justify-center gap-1.5 mt-3 text-primary/70 hover:text-primary transition-colors text-xs font-semibold">
+              <p className="text-white/30 text-xs tracking-widest uppercase">
+                Premium Function Band — Devon, UK
+              </p>
+              <p className="text-white/30 text-xs mt-1">
+                Weddings · Corporate · Private Parties · Festivals
+              </p>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="inline-flex items-center justify-center gap-1.5 mt-3 text-primary/70 hover:text-primary transition-colors text-xs font-semibold"
+              >
                 <Mail className="w-3 h-3" />
                 {CONTACT_EMAIL}
               </a>
             </div>
 
             <div className="flex items-center gap-3">
-              <a href="https://www.instagram.com/mcbanduk" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a
+                href="https://www.instagram.com/mcbanduk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white"
+              >
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://www.facebook.com/p/Midnight-Culture-61571536011309/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a
+                href="https://www.facebook.com/p/Midnight-Culture-61571536011309/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white"
+              >
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://www.youtube.com/@MidnightCultureband" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a
+                href="https://www.youtube.com/@MidnightCultureband"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white"
+              >
                 <Youtube className="w-4 h-4" />
               </a>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors text-white/50 hover:text-white"
+              >
                 <Mail className="w-4 h-4" />
               </a>
             </div>
