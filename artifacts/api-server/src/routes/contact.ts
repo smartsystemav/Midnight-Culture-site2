@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 const router: IRouter = Router();
 
@@ -18,27 +18,15 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
-  const smtpUser = process.env["SMTP_USER"];
-  const smtpPass = process.env["SMTP_PASS"];
-  const contactTo = process.env["CONTACT_TO"] ?? smtpUser;
+  const apiKey = process.env["RESEND_API_KEY"];
+  const contactTo = process.env["CONTACT_TO"] ?? "info@mcbanduk.co.uk";
 
-  if (!smtpUser || !smtpPass) {
+  if (!apiKey) {
     res.status(503).json({ error: "Email service not configured." });
     return;
   }
 
-  const smtpHost = process.env["SMTP_HOST"] ?? "smtp.gmail.com";
-  const smtpPort = Number(process.env["SMTP_PORT"] ?? "465");
-
-  const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: smtpPort,
-    secure: smtpPort === 465,
-    auth: {
-      user: smtpUser,
-      pass: smtpPass,
-    },
-  });
+  const resend = new Resend(apiKey);
 
   const subject = `Booking Enquiry — ${type ?? "Event"}${date ? ` on ${date}` : ""}`;
 
@@ -60,13 +48,21 @@ router.post("/contact", async (req, res) => {
   `;
 
   try {
-    await transporter.sendMail({
-      from: `"Midnight Culture Website" <${smtpUser}>`,
-      to: contactTo,
+    const fromAddress = process.env["RESEND_FROM"] ?? "Midnight Culture <onboarding@resend.dev>";
+
+    const { error } = await resend.emails.send({
+      from: fromAddress,
+      to: [contactTo],
       replyTo: email,
       subject,
       html,
     });
+
+    if (error) {
+      console.error("Resend error:", error);
+      res.status(500).json({ error: "Failed to send email. Please try again." });
+      return;
+    }
 
     res.json({ success: true });
   } catch (err) {
