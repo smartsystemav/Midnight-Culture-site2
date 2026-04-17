@@ -77,28 +77,51 @@ export default function Home() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleBooking = (e: React.FormEvent<HTMLFormElement>) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleBooking = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const data = new FormData(form);
-    const name = data.get("name") as string;
-    const email = data.get("email") as string;
-    const date = data.get("date") as string;
-    const type = data.get("type") as string;
-    const venue = data.get("venue") as string;
-    const details = data.get("details") as string;
 
-    const subject = encodeURIComponent(`Booking Enquiry — ${type ? type : "Event"} ${date ? `on ${date}` : ""}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nEvent Date: ${date || "TBC"}\nEvent Type: ${type || "TBC"}\nVenue: ${venue || "TBC"}\n\nDetails:\n${details}`
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          date: data.get("date"),
+          type: data.get("type"),
+          venue: data.get("venue"),
+          details: data.get("details"),
+        }),
+      });
 
-    toast({
-      title: "Opening your email client...",
-      description: `Your enquiry will be sent to ${CONTACT_EMAIL}`,
-    });
-    form.reset();
+      if (res.ok) {
+        toast({
+          title: "Enquiry sent!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        form.reset();
+      } else {
+        const json = await res.json().catch(() => ({}));
+        toast({
+          title: "Something went wrong",
+          description: (json as { error?: string }).error ?? "Please try emailing us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: "Network error",
+        description: `Please email us directly at ${CONTACT_EMAIL}`,
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -510,9 +533,9 @@ export default function Home() {
                   <Textarea name="details" placeholder="Tell us about your event — number of guests, timings, any special requests..." className="bg-card/60 border-white/10 rounded-none min-h-[120px] focus-visible:ring-primary text-sm" />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/80 text-white font-bold rounded-none h-13 text-sm tracking-widest uppercase">
-                  Send Enquiry
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                <Button type="submit" size="lg" disabled={submitting} className="w-full bg-primary hover:bg-primary/80 text-white font-bold rounded-none h-13 text-sm tracking-widest uppercase disabled:opacity-60">
+                  {submitting ? "Sending..." : "Send Enquiry"}
+                  {!submitting && <ArrowRight className="ml-2 w-4 h-4" />}
                 </Button>
               </form>
             </FadeIn>
