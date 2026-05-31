@@ -505,6 +505,20 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn className="mb-12">
+  <div
+    className="relative w-full max-w-4xl mx-auto"
+    style={{ paddingBottom: "min(56.25%, 600px)", height: 0, position: "relative" }}
+  >
+    <iframe
+      src="https://www.youtube.com/embed/7dUhoCH94rw"
+      title="Midnight Culture Showreel 2026"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="absolute inset-0 w-full h-full border border-white/10"
+    />
+  </div>
+</FadeIn>
+          <FadeIn className="mb-12">
             <div
               className="relative w-full max-w-4xl mx-auto"
               style={{ paddingBottom: "min(56.25%, 600px)", height: 0, position: "relative" }}
