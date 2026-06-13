@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 import logoImg from "../assets/images/New MC Logo 26 JD.png";
-import bannerImg from "attached_assets/New MC Logo 26 JD.png";
+import bannerImg from "../assets/images/New MC Logo 26 JD.png";
 import bgImg from "@assets/MC_Background_1776245648247.png";
 import bandImg from "@assets/DSC03883_1776245820156.jpg";
 
