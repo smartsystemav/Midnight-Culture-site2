@@ -270,8 +270,8 @@ export default function Home() {
             <img
               src={bannerImg}
               alt="Midnight Culture"
-              className="w-full max-w-4xl mx-auto"
-              style={{ marginBottom: "-18%" }}
+              className="w-full max-w-5xl mx-auto"
+              style={{ marginBottom: "-5%" }}
             />
           </motion.div>
 
